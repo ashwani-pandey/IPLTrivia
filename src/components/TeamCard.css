@@ -1,8 +1,75 @@
 
-.team-card-front {
-    background: url() center center no-repeat;
+.team-card {
+    width: 316px;
+    height: 381px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0 10px 0 0;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.card {
+    position: relative;
+    transition: .5s ease;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
 }
 
 .content {
-    background: rgb(0,0,0);
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+}
+
+.logo {
+    height: 101px;
+    padding: 13px;
+    object-fit: cover;
+}
+
+.team-card-front {
+    width: 316px;
+    height: 381px;
+    position: absolute;
+}
+
+.team-card-front .team-name {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 23px;
+    margin-top: 20px;
+    z-index: 3;
+}
+
+.team-card-front .best-result {
+    display: flex;
+    justify-content: space-around;
+}
+
+.team-card-front .best-result .text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 23px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -175px;
+    margin-top: 50px;
+    z-index: 3;
+}
+
+.team-card-front .best-result .result {
+    font-size: 67px;
+    margin: -15px;
+}
+
+.team-card-front .best-result .year {
+    font-size: 10px;
+    margin-top: 8px;
 }

@@ -16,7 +16,7 @@ class TeamsView extends React.Component {
     }
 
     render(){
-
+        
         let teamCards = this.state.teams.map((team) => {
             return <TeamCard key={team.short} team={team} />
         });
