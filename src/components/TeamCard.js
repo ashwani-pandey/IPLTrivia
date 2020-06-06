@@ -32,7 +32,7 @@ class TeamCard extends React.Component {
                             <br />
                             <div className="best-result">
                                 <img src="/static/img/misc/cup.png" alt="" style={{zIndex: 2, position: "absolute"}}/>
-                                <div className="text">
+                                <div className="text" style={{color: team.color.slice(25, 34)}}>
                                     Best Result
                                     <span className="result">{team.bestResult.position}</span>
                                     <div className="year">{team.bestResult.year.join(",")}</div>
