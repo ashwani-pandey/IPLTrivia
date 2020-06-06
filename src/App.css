@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #000000;
 }
 
 .App-logo {
@@ -26,6 +27,14 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.head-text {
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  padding: 30px;
+  font-weight: 700;
+  font-size: 30px;
 }
 
 @keyframes App-logo-spin {
