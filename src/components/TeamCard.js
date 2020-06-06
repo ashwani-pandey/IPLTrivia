@@ -40,6 +40,9 @@ class TeamCard extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <div className="team-card-back">
+
+                    </div>
                 </div>
             </div>
         );
