@@ -41,7 +41,12 @@ class TeamCard extends React.Component {
                         </div>
                     </div>
                     <div className="team-card-back">
-
+                        <div className="content" style={{background: team.color}}>
+                            <span className="team-statistic">Performance</span>
+                            <div className="performance">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 
 .team-card {
-    width: 316px;
-    height: 381px;
+    width: 300px;
+    height: 400px;
     border-radius: 5px;
     display: inline-block;
     cursor: pointer;
@@ -15,6 +15,7 @@
 
 .card {
     position: relative;
+    transform-style: preserve-3d;
     transition: .5s ease;
 }
 
@@ -22,22 +23,23 @@
     transform: rotateY(180deg);
 }
 
-.content {
+.team-card-front {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.team-card-front .content {
     overflow: hidden;
     height: 100%;
     z-index: 2;
 }
 
-.logo {
+.team-card-front .logo {
     height: 101px;
     padding: 13px;
     object-fit: cover;
-}
-
-.team-card-front {
-    width: 316px;
-    height: 381px;
-    position: absolute;
 }
 
 .team-card-front .team-name {
@@ -72,4 +74,32 @@
 .team-card-front .best-result .year {
     font-size: 10px;
     margin-top: 8px;
+}
+
+.team-card-back {
+    z-index: 4;
+    backface-visibility: hidden;
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    transform: rotateY(180deg);
+}
+
+.team-card-back .content {
+    overflow: hidden;
+    height: 100%;
+    z-index: 2;
+}
+
+.team-card-back .team-statistic {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+}
+
+.team-card-back .performance {
+    width: 300px;
+    height: 400px;
+    background-color: white;
 }
