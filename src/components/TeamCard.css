@@ -1,6 +1,6 @@
 
 .team-card {
-    width: 300px;
+    width: 350px;
     height: 400px;
     border-radius: 5px;
     display: inline-block;
@@ -24,7 +24,7 @@
 }
 
 .team-card-front {
-    width: 300px;
+    width: 350px;
     height: 400px;
     position: absolute;
     backface-visibility: hidden;
@@ -80,7 +80,7 @@
     z-index: 4;
     backface-visibility: hidden;
     position: absolute;
-    width: 300px;
+    width: 350px;
     height: 400px;
     transform: rotateY(180deg);
 }
@@ -99,7 +99,24 @@
 }
 
 .team-card-back .performance {
-    width: 300px;
+    width: 350px;
     height: 400px;
     background-color: white;
+}
+
+.team-card-back .total-matches {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.team-card-back .winning-rate {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.team-card-back .bar-chart {
+    padding-top: 25px;
 }

@@ -1,6 +1,9 @@
 import React from 'react';
 import "./TeamCard.css";
 
+var BarChart = require("react-chartjs").Bar;
+//import Bar from "react-chartjs";
+
 class TeamCard extends React.Component {
 
     constructor(props){
@@ -11,8 +14,41 @@ class TeamCard extends React.Component {
         return {background: `url(${photo}) center center no-repeat`};
     }
 
+    getChartData = (team) => {
+        
+        return {
+            labels: ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],
+            datasets: [
+                {
+                    label: 'Matches won in season',
+                    fillColor: team.color.slice(40, 47),
+                    data: team.totalMatchesWon
+                },
+                {
+                    label: 'Total Matches played in season',
+                    fillColor: team.color.slice(25, 34),
+                    data: team.totalMatches
+                }
+            ]
+        }
+    }
+
+    getTotalMatches(team) {
+        let totalMatches = 0
+        team.totalMatches.forEach((yearMatches) => totalMatches += yearMatches);
+        return totalMatches;
+    }
+
+    getWinningRate(team) {
+        let totalMatchesWon = 0;
+        team.totalMatchesWon.forEach((yearlyWins) => totalMatchesWon += yearlyWins);
+        let winningRate = (totalMatchesWon/this.getTotalMatches(team))*100;
+        return winningRate.toFixed(2);
+    }
+
     render() {
         const {team} = this.props;
+        const chartData = this.getChartData(team);
 
         return (
             <div className={`team-card ${team.short}-card`}>
@@ -44,7 +80,15 @@ class TeamCard extends React.Component {
                         <div className="content" style={{background: team.color}}>
                             <span className="team-statistic">Performance</span>
                             <div className="performance">
-                                
+                                <div className="total-matches" style={{color: team.color.slice(25, 34)}}>
+                                    TOTAL MATCHES : {this.getTotalMatches(team)}
+                                </div>
+                                <div className="winning-rate" style={{color: team.color.slice(25, 34)}}>
+                                    WINNING RATE : {this.getWinningRate(team)} % 
+                                </div>
+                                <div className="bar-chart">
+                                    <BarChart data={chartData} options={{}} width="330" height="250"/>
+                                </div>
                             </div>
                         </div>
                     </div>
